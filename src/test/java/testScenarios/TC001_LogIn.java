@@ -19,7 +19,8 @@ public class TC001_LogIn extends BaseClass {
 		boolean validateLogin = new LogInPage()
 		.enterUserName("userdanaan")
 		.enterpassword("Kity@1517")
-		.clickSubmitForValid()
+		.clickSubmit()
+		.iAgreeButton()
 		.validateLogin()
 		.logout()
 		.verifyElements();
@@ -31,7 +32,8 @@ public class TC001_LogIn extends BaseClass {
 		boolean verifyInvalidLoginToHomePage = new LogInPage()
 		.enterUserName("userdanaan")
 		.enterpassword("Testing")
-		.clickSubmitForInvalid()
+		.clickSubmit()
+		.iAgreeButtonInvalid()
 		.verifyElements();
 		Assert.assertTrue(verifyInvalidLoginToHomePage);
 	}

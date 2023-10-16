@@ -9,6 +9,7 @@ public class LogInPage extends BaseClass {
 	private By userName = By.id("username");
 	private By passWord = By.id("password");
 	private By submitButton = By.xpath("//button[text() = 'Sign In']");
+	private By iAgreeButton = By.xpath("//button[contains(text(),'I agree to the Privacy Policy')]");
 	private By getStartButton = By.xpath("//button/strong");
 	
 	public boolean verifyElements() {
@@ -32,13 +33,18 @@ public class LogInPage extends BaseClass {
 		return this;
 	}
 	
-	public HomePage clickSubmitForValid() {
+	public LogInPage clickSubmit() {
 		driver.findElement(submitButton).click();
+		return this;
+	}
+	
+	public HomePage iAgreeButton() {
+		driver.findElement(iAgreeButton).click();
 		return new HomePage();
 	}
 	
-	public LogInPage clickSubmitForInvalid() {
-		driver.findElement(submitButton).click();
+	public LogInPage iAgreeButtonInvalid() {
+		driver.findElement(iAgreeButton).click();
 		return this;
 	}
 }

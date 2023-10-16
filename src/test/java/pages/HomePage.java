@@ -7,7 +7,7 @@ import Base.BaseClass;
 
 public class HomePage extends BaseClass{
 	
-	private By welcomeText = By.xpath("//div/h3[@class = 'text-white']");
+	private By welcomeText = By.xpath("//div/h3[contains(text(),'Welcome')]");
 	private By logOut = By.xpath("//li/a[text()= 'Logout']");
 	
 	public boolean verifyElementsInHomePage() {
